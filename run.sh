@@ -8,6 +8,7 @@ if [ "$1" = 'logstash' ]; then
 	
 	COUNTER=1
 	while ! curl -s "$ELASTICSEARCH_HOSTS" >/dev/null; do 
+		echo -e "Connection to elasticsearch refused";
 		sleep 3;
 		COUNTER=$[$COUNTER +1]
 		if [ $COUNTER -gt 20 ]; then
@@ -15,6 +16,7 @@ if [ "$1" = 'logstash' ]; then
 			exit 1
 		fi
 	done
+	echo -e "Connection to elasticsearch secceeded";
 fi
 
 /docker-entrypoint.sh "$@"
