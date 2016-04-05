@@ -1,4 +1,4 @@
-FROM logstash:latest
+FROM logstash:2.2.1
 MAINTAINER Ludek Vesely <ludek.vesely@email.com>
 
 EXPOSE 12345/tcp 12345/udp
