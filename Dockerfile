@@ -1,7 +1,7 @@
 FROM logstash:2.1.0
 MAINTAINER Ludek Vesely <ludek.vesely@email.com>
 
-EXPOSE 12345/tcp 12345/udp
+EXPOSE 5000/tcp 5000/udp
 CMD ["logstash", "-f", "/logstash.conf"]
 ENTRYPOINT ["/run.sh"]
 
